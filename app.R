@@ -24,6 +24,14 @@ ui <- pageWithSidebar(
     ),
   # Main panel for displaying outputs ----
 mainPanel(
+  "Absolute and Relative Scale Hospitalizations attributable to Heat for that definiton Selected to the Left",
+  fluidRow(
+    splitLayout(cellWidths = c("50%", "50%"), plotOutput("Plot_abs"), plotOutput("Plot_relative"))
+  ),
+  "Absolute and Relative Scale Hospitalizations Attributable to Heat for those Heat Events Plotted Above",
+  fluidRow(
+    splitLayout(cellWidths = c("50%", "50%"), plotOutput("plot_maxval_abs"), plotOutput("plot_maxval_rel"))
+  ),
     "Absolute Scale Most Effective Heat Event Definitions",
     fluidRow(
       splitLayout(cellWidths = c("50%", "50%"), plotOutput("plot_whichmax_abs", click = "plot_click"), plotOutput("plot_largeclust_abs"))
@@ -31,14 +39,6 @@ mainPanel(
     "Relative Scale Most Effective Heat Event Definitions",
     fluidRow(
       splitLayout(cellWidths = c("50%", "50%"), plotOutput("plot_whichmax_rel", click = "plot_click_rel"), plotOutput("plot_largeclust_rel",))
-    ),
-    "Absolute and Relative Scale Hospitalizations Attributable to Heat for those Heat Events Plotted Above",
-    fluidRow(
-      splitLayout(cellWidths = c("50%", "50%"), plotOutput("plot_maxval_abs"), plotOutput("plot_maxval_rel"))
-    ),
-    "Absolute and Relative Scale Hospitalizations attributable to Heat for that definiton Selected to the Left",
-    fluidRow(
-      splitLayout(cellWidths = c("50%", "50%"), plotOutput("Plot_abs"), plotOutput("Plot_relative"))
     )
   )
 )
@@ -192,6 +192,11 @@ server <- function(input, output) {
     
     
 }
+  
+  
+
+shinyApp(ui, server)
+
   
   
 
