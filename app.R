@@ -61,7 +61,7 @@ joined$largeClust = ifelse(joined$whichMax < 10, "max", ifelse(joined$whichMax <
 joined$whichMax = names(joined)[(joined$whichMax+1)]
 
 #Edit this row to be where you are storing this file
-path = "shapefile/cb_2016_us_zcta510_500k.shp"
+path = "shapefile/cb_2018_us_zcta510_500k.shp"
 #Path is the path to the shapefile for ZCTAs in california (shp)
 
 joined$whichMax = as.factor(joined$whichMax)
